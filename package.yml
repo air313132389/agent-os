@@ -1,0 +1,6 @@
+package: space.heiyu.app.agent-os
+name: Agent OS
+version: 1.0.0
+description: AI 编码会话管理工具 - 管理 Claude Code 等 AI 编码会话的自托管 Web UI
+author: Yuchen
+homepage: https://github.com/saadnvd1/agent-os

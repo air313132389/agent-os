@@ -1,0 +1,26 @@
+lzc-sdk-version: '0.1'
+name: Agent OS
+package: space.heiyu.app.agent-os
+version: 1.0.0
+
+application:
+  subdomain: agent-os
+  multi_instance: false
+  background_task: true
+
+  routes:
+    - /=http://agent-os.space.heiyu.app.agent-os.lzcapp:3011
+
+  services:
+    agent-os:
+      image: szk2h/agent-os:1.0.0
+      binds:
+        - /lzcapp/var/data:/lzcapp/var/data
+        - /lzcapp/var/projects:/root/projects
+        - /lzcapp/var/config:/root/.claude
+      environment:
+        - NODE_ENV=production
+        - PORT=3011
+        - DB_PATH=/lzcapp/var/data/agent-os.db
+        - TERM=xterm-256color
+        - SHELL=/bin/zsh
